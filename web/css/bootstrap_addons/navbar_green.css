@@ -1,0 +1,63 @@
+.navbar-green{
+    background: linear-gradient(to top, rgb(175, 175, 175), rgb(198,198,198));
+}
+.navbar-green a, .navbar-green button{
+    color: #000000;
+    border-left: 1px solid #989898;
+    border-right: 1px solid #989898;
+}
+.navbar-green .active > a, .navbar-green .active.open > a{
+    background: #56ac56!important;
+    box-shadow: inset 0 0 9px rgba(0, 0, 0, 0.6);
+}
+.navbar-green button{
+    border-right: 1px solid #989898!important;
+}
+.navbar-green a:hover, .navbar-green button:hover{
+    color: #000000;
+    background: #C6C6C6!important;
+}
+.navbar-green .active > a:hover{
+    background-color: #56ac56!important;
+    box-shadow: inset 0 0 9px rgba(0, 0, 0, 0.6);
+}
+.navbar-green .dropdown ul{
+    padding: 0;
+    margin: 0;
+}
+.navbar-green .dropdown-menu a{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.navbar-green .navbar-nav{
+    margin-bottom: 0;
+}
+.navbar-green .dropdown.open a{
+    background: #C6C6C6;
+}
+.navbar-green .dropdown.open > a{
+    background: #C6C6C6;
+    box-shadow: inset 0 0 9px rgba(0, 0, 0, 0.6);
+}
+.navbar-green li + li a{
+    border-left: none;
+}
+.navbar-green .glyphicon{
+    margin-right: 10px;
+    color: #282828
+}
+.navbar-green .active .glyphicon{
+    color: #d8cd00;
+}
+.dropdown-submenu > a:after {
+    border-left-color: #000!important;
+}
+
+@media (max-width: 767px) {
+    .navbar-green .dropdown-submenu .dropdown-menu a{
+        padding-left: 35px!important;
+    }
+    .navbar-green .dropdown-submenu .dropdown-submenu .dropdown-menu a{
+        padding-left: 50px!important;
+    }
+}

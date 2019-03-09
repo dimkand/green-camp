@@ -1,0 +1,23 @@
+#sidebar-left{
+    min-width: 150px;
+    margin: 20px 0 0 0;
+}
+#sidebar-left ul{
+    margin: 0;
+    padding: 0;
+}
+#sidebar-left a{
+    color: #58965d;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    border-left: 4px solid #fff;
+}
+#sidebar-left a:hover{
+    border-left: 4px solid #5cb85c;
+    background-color: #EFEFEF;
+}
+#sidebar-left .dropdown-menu{
+    top: 0;
+    left: 100%;
+}

@@ -1,0 +1,30 @@
+.quantity_input{
+    width: 60px;
+    text-align: right;
+}
+.quantity_prev, .quantity_next{
+    font-size: 22px;
+}
+.quantity_prev:visited, .quantity_next:visited{
+    color: #5cb85c;
+}
+.quantity_prev:hover, .quantity_next:hover{
+    color: #d81b21;
+}
+.quantity_div{
+    display: flex;
+    align-items: center;
+}
+.td_quantity{
+    width: 122px;
+}
+.td_sum{
+    width: 220px;
+}
+.cart_goors_delete{
+    float: right;
+    margin-right: 10px;
+}
+#create_order{
+    float: right;
+}
