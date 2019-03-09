@@ -20,12 +20,6 @@ function articlesAnim(){
     });
 }
 
-function delImgHoverEffects() {
-    if($(window).width() > 768)
-        return;
-    $('.article_prev').removeClass('effect-sidelily');
-}
-
 (function ($) {
     function animation() {
         if ($(window).scrollTop() < 20)

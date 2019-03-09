@@ -1,6 +1,6 @@
 /*Общие*/
 body{
-    font-size: 17px;
+    font-size: 16px;
 }
 .wrap{
     background-color: #f9ffe9;
@@ -313,7 +313,6 @@ header{
     min-height: 360px;
     max-height: 400px;
     max-width: 512px;
-    width: 100%;
     margin: 0 7px;
 }
 .article_prev img{
@@ -330,7 +329,6 @@ header{
     min-height: 360px;
     max-height: 400px;
     max-width: 512px;
-    width: 100%;
     position: relative;
     overflow:hidden;
     text-overflow: ellipsis;
@@ -785,6 +783,10 @@ footer{
     .wrap > .container{
         padding: 140px 30px 20px;
     }
+
+    #good_card_tabs .tab-content{
+        padding: 40px 0;
+    }
     .dk_sidenav{
         position: fixed;
         top: -15px;
@@ -834,6 +836,11 @@ footer{
     h1, h2{
         font-size: 30px;
     }
+    .effect-sidelily img{
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
     .effect-lily figcaption{
         opacity: 1;
         -webkit-transform: translateY(0);
@@ -866,8 +873,11 @@ footer{
 }
 
 @media (max-width: 480px) {
+    body{
+        font-size: 14px;
+    }
     .wrap > .container{
-        padding-top: 90px;
+        padding: 90px 10px 20px;
     }
     header{
         height: 80px;
@@ -877,6 +887,19 @@ footer{
     }
     h1, h2{
         font-size: 24px;
+    }
+    .category{
+        margin: 10px 0;
+    }
+    .ccat {
+        width: 300px;
+        height: 300px;
+    }
+    .ccat.effect-lily figcaption{
+        top: 0;
+    }
+    #good_card_tabs .nav-tabs{
+        font-size: 13px;
     }
     .article_subtext, #articles_list .article:nth-child(even) .article_subtext:last-child{
         display: none !important;
