@@ -18,6 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 
 <div id="good_card">
+    <h1><?= $model->title?></h1>
     <div>
         <div id="good_card_crsl">
             <?php

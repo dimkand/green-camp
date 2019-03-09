@@ -376,6 +376,9 @@ header{
     align-content: space-between;
     justify-content: space-between;
 }
+#goods_wrapper h1{
+    margin-bottom: 20px;
+}
 #goods_show{
     display: flex;
     flex-wrap: wrap;
@@ -491,6 +494,9 @@ header{
 }
 
 /*Карточка товара*/
+#good_card h1{
+    margin-bottom: 20px;
+}
 #good_card > div{
     display: flex;
     justify-content: space-between;

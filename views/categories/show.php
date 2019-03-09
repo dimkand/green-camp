@@ -6,6 +6,7 @@ if (empty($model)) {
     $this->title = 'Каталог';
     $this->params['breadcrumbs'][] = $this->title;
 } else {
+    $this->title = $model->title;
     echo $this->render('@views/metatags', ['model' => $model]);
     $this->params['breadcrumbs'] = [];
     $this->render('_breadcrumbs', ['id' => $model->id, 'route' => 'show']);
@@ -61,6 +62,7 @@ if (empty($model)) {
         </div>
 
         <div id="goods_wrapper">
+            <h1><?= $this->title?></h1>
             <?= $this->render(!isset($model->type) || $model->type == 1 ? 'categories_show' : 'goods_show', [
                 'data' => $data,
                 'pages' => $pages,
