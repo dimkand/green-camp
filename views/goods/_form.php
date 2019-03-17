@@ -27,6 +27,11 @@ use kartik\rating\StarRating;
 
     <?= $form->field($model, 'price')->textInput() ?>
 
+    <?= $form->field($model, 'popularFlag')->radioList([
+        0 => 'Обычный',
+        1 => 'Популярный'
+    ]) ?>
+
     <?php echo $form->field($model, 'rating')->label('Оценка')->widget(StarRating::classname(), [
         'name' => 'rating_add',
         'pluginOptions' => [

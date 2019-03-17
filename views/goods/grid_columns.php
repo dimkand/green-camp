@@ -22,6 +22,15 @@ return [
         'format' => ['currency']
     ],
     [
+        'attribute' => 'popularFlag',
+        'format' => 'text',
+        'value' => function ($model) {
+            if ($model->popularFlag)
+                return 'Да';
+            return '';
+        }
+    ],
+    [
         'attribute' => 'date',
         'format' => ['relativeTime']
     ],
