@@ -12,11 +12,6 @@ $this->params['breadcrumbs'][] = ['label' => 'Каталог', 'url' => ['/categ
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<div id="cart">
-    <div id="cart_count"><span><?= Yii::$app->cart->getCount() ?></span></div>
-    <a href="/cart/show"><span class="glyphicon glyphicon-shopping-cart"></span></a>
-</div>
-
 <div id="good_card">
     <h1><?= $model->title?></h1>
     <div>

@@ -35,4 +35,8 @@ use yii\helpers\Url;
     </div>
 <?php endforeach;?>
 </div>
-<?= \yii\widgets\LinkPager::widget(['pagination' => $pages, 'options' => ['class' => 'pagination ajax_pagination']])?>
+
+<?php
+if(isset($pages))
+    echo \yii\widgets\LinkPager::widget(['pagination' => $pages, 'options' => ['class' => 'pagination ajax_pagination']]);
+?>

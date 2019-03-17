@@ -36,7 +36,7 @@ h2{
 .button_wrap{
     display: flex;
     justify-content: center;
-    margin: 40px 0;
+    margin: 60px 0 40px;
 }
 .button{
     display: inline-block;
@@ -223,9 +223,18 @@ header{
     top: 0;
     z-index: 1;
 }
-#main_articles h2{
+#history{
+    margin-top: 40px;
+}
+#popular_goods{
+    margin-top: 40px;
+}
+#popular_goods h2{
     margin-bottom: 30px;
 }
+/*#main_articles h2{*/
+    /*margin-bottom: 30px;*/
+/*}*/
 
 /* effect-sidelily */
 .effect-sidelily {
@@ -381,7 +390,6 @@ header{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    min-height: calc(100vh - 315px);
 }
 .good_show{
     display: flex;
@@ -400,9 +408,6 @@ header{
 }
 .good_show:hover .good_show_title:before{
     background-color: #cc0001;
-}
-.good_show:nth-child(1), .good_show:nth-child(2), .good_show:nth-child(3){
-    margin: 0 7px 7px 7px;
 }
 .good_show_articul{
     color: #ff7645;

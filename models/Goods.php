@@ -29,6 +29,8 @@ class Goods extends Crud implements CartItemInterface
     // путь к изображениям товаров
     public static $img_path = 'img/goods/';
 
+    public static $POPULAR_LIMIT = 4;
+
     public static function tableName()
     {
         return 'goods';
@@ -49,7 +51,19 @@ class Goods extends Crud implements CartItemInterface
             [['keywords', 'description'], 'string', 'max' => 255],
             [['img_count'], 'integer', 'max' => 120],
             [['rating'], 'number'],
+            [['popularFlag'], 'popularLimit'],
         ];
+    }
+
+    public function popularLimit($attribute){
+        if(!$this->$attribute)
+            return;
+
+        $count = Goods::find()->where(['popularFlag' => 1])->count();
+        if($count < self::$POPULAR_LIMIT)
+            return;
+
+        return $this->addErrors([$attribute => 'Популярных товаров должно быть не больше ' . self::$POPULAR_LIMIT]);
     }
 
     public function getCategories()
@@ -174,7 +188,8 @@ class Goods extends Crud implements CartItemInterface
             'price' => 'Цена',
             'date' => 'Дата',
             'rating' => 'Оценка',
-            'quantity' => 'Количество'
+            'quantity' => 'Количество',
+            'popularFlag' => 'Популярность'
         ];
     }
 }

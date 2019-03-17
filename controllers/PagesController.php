@@ -35,18 +35,19 @@ class PagesController extends AdminAccessController
         ];
     }
 
-    public function actionIndex($id = 'main')
+    public function actionIndex()
     {
         $this->layout = "main";
 
-        $model = $this->findModel($id);
+        $model = Pages::find()->indexBy('id')->all();
         $categories = Categories::findAll(['parent' => 0]);
-        $articles = Articles::find()->orderBy('date')->limit(3)->all();
+        $goods = Goods::find()->where(['popularFlag' => 1])->limit(6)->all();
+        //$articles = Articles::find()->orderBy('date')->limit(3)->all();
 
         return $this->render('index', [
             'model' => $model,
             'categories' => $categories,
-            'articles' => $articles
+            'goods' => $goods
         ]);
     }
 

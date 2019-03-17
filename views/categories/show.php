@@ -13,11 +13,6 @@ if (empty($model)) {
 }
 
 ?>
-    <div id="cart">
-        <div id="cart_count"><span><?= Yii::$app->cart->getCount() ?></span></div>
-        <a href="/cart/show"><span class="glyphicon glyphicon-shopping-cart"></span></a>
-    </div>
-
     <div id="wrapper">
         <div id="leftblock">
             <?php

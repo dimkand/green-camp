@@ -68,6 +68,12 @@ FontAsset::register($this);
             ]
         ]) ?>
         <?= Alert::widget() ?>
+
+        <div id="cart">
+            <div id="cart_count"><span><?= Yii::$app->cart->getCount() ?></span></div>
+            <a href="/cart/show"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+        </div>
+
         <?= $content ?>
     </div>
 </div>

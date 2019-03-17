@@ -1,13 +1,19 @@
 (function($){
     function animation(){
         anim.elem('h1', 'animated fadeInUp');
-        anim.elem('#line_1', 'animated delay-06s bounceInUp');
-        anim.elem('h2', 'animated delay-08s bounceInUp');
-        anim.elemsCascade('#main_categories_container', '.category', 'bounceInUp', 3, 1);
-        anim.elem('#line_2', 'animated bounceInUp');
-        anim.elem('#main_text', 'animated delay-02s bounceInUp');
-        anim.elem('#line_4', 'animated delay-05s fadeIn');
-        anim.elem('#main_articles h2', 'animated flipInY');
+        anim.elem('#js-line_1', 'animated delay-06s fadeInDown');
+        anim.elem('#main_categories h2', 'animated delay-08s fadeInDown');
+        anim.elemsCascade('#main_categories_container', '.category', 'fadeInDown', 3, 1);
+        anim.elem('#history h2', 'animated fadeInDown');
+        anim.elem('#history div', 'animated delay-02s fadeInDown');
+        anim.elem('#js-line_3', 'animated fadeInDown');
+        anim.elem('#why_us h2', 'animated delay-02s fadeInDown');
+        anim.elem('#why_us div', 'animated delay-04s fadeInDown');
+        anim.elem('#popular_goods h2', 'animated delay-02s fadeInDown');
+        anim.elemsCascade('#popular_goods > div', '.good_show', 'fadeInDown', 1, 0);
+        anim.elem('#js-line_5', 'animated fadeInDown');
+        anim.elem('#info h2', 'animated delay-02s fadeInDown');
+        anim.elem('#info div', 'animated delay-04s fadeInDown');
         anim.elem('.button', 'animated flipInY');
     }
 
