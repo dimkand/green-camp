@@ -26,7 +26,7 @@ use yii\helpers\Url;
         <div class="good_show_title"><?= $good['title'] ?></div>
         <div class="good_show_wr">
             <div class="good_show_price">
-                <?= Yii::$app->formatter->asCurrency($good['price']) ?>
+                <?= Yii::$app->formatter->asCurrency($good['price']) . ' грн.' ?>
             </div>
             <div class="good_show_cart">
                 <?= Html::a("<span class='glyphicon glyphicon-shopping-cart'></span>", ['#'], ['data-attr' => $good['id'], 'title' => 'Добавить в корзину']) ?>

@@ -40,7 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <div id="good_card_price">
                 <span>Артикул <?= $model['id']?></span>
                 <div>
-                    <?= Yii::$app->formatter->asCurrency($model->price) ?>
+                    <?= Yii::$app->formatter->asCurrency($model->price) . ' грн.' ?>
                 </div>
                 <a id="good_card_cart" class="btn btn-success" href="#" data-attr='<?= $model->id ?>'>Добавить в
                     корзину</a>

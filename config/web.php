@@ -21,7 +21,11 @@ $config = [
             'class' => 'yii\i18n\Formatter',
             'defaultTimeZone' => 'Europe/Moscow',
             'timeZone' => 'Europe/Moscow',
-            'locale' => 'ru-RU'
+            'locale' => 'ua-UA',
+            'numberFormatterSymbols' => [
+                NumberFormatter::CURRENCY_SYMBOL => '',
+            ],
+            'nullDisplay' => 0
         ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
