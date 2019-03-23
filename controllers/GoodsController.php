@@ -76,6 +76,7 @@ class GoodsController extends AdminAccessController
     public function actionCreate($category_id)
     {
         $model = new Goods();
+        $model->popularFlag = 0;
         $all_categories = Categories::find()->all();
 
         if ($model->load(Yii::$app->request->post()) && $model->save())
