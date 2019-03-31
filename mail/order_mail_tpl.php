@@ -46,12 +46,8 @@ $this->title = 'Заказ №' . $model->id;
             <td><?= $model->method->title ?></td>
         </tr>
         <tr>
-            <th>Имя</th>
+            <th>Имя и фамилия</th>
             <td><?= $model->name ?></td>
-        </tr>
-        <tr>
-            <th>Страна</th>
-            <td><?= $model->country ?></td>
         </tr>
         <tr>
             <th>Область</th>
@@ -62,7 +58,7 @@ $this->title = 'Заказ №' . $model->id;
             <td><?= $model->town ?></td>
         </tr>
         <tr>
-            <th>Адрес</th>
+            <th>Отделения "Новой почты"</th>
             <td><?= $model->address ?></td>
         </tr>
         <tr>

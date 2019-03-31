@@ -3,6 +3,7 @@
 namespace app\models;
 
 use app\components\Helpers;
+use Codeception\Module\Yii1;
 use Yii;
 use yii2mod\cart\models\CartItemInterface;
 
@@ -48,10 +49,11 @@ class Goods extends Crud implements CartItemInterface
             [['title'], 'required'],
             [['categories'], 'required', 'message' => 'Необходимо выбрать хотя бы одну из категорий'],
             [['title'], 'string', 'max' => 120],
-            [['keywords', 'description'], 'string', 'max' => 255],
+            [['keywords', 'description', 'articul'], 'string', 'max' => 255],
             [['img_count'], 'integer', 'max' => 120],
             [['rating'], 'number'],
             [['popularFlag'], 'popularLimit'],
+            [['saleFlag', 'freeFlag'], 'integer']
         ];
     }
 
@@ -179,7 +181,7 @@ class Goods extends Crud implements CartItemInterface
     public function attributeLabels()
     {
         return [
-            'id' => 'Артикул',
+            'id' => 'ID',
             'title' => 'Наименование товара',
             'description' => 'Описание товара',
             'keywords' => 'Ключевые слова',
@@ -189,7 +191,10 @@ class Goods extends Crud implements CartItemInterface
             'date' => 'Дата',
             'rating' => 'Оценка',
             'quantity' => 'Количество',
-            'popularFlag' => 'Популярность'
+            'popularFlag' => 'Популярность',
+            'saleFlag' => Yii::$app->params['sale_text'],
+            'freeFlag' => Yii::$app->params['free_text'],
+            'articul' => 'Артикул'
         ];
     }
 }

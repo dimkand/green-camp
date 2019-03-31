@@ -12,10 +12,10 @@ return [
         'headerOptions' => ['width' => '80'],
         'contentOptions' => ['class' => 'grid_td_img'],
         'content' => function ($model) {
-            return Helpers::getGoodsImg($model->id, $model->img_count)[0]['content'];
+            return Helpers::getGoodsImg($model)[0]['content'];
         },
     ],
-    'id',
+    'articul',
     'title',
     [
         'attribute' => 'price',
@@ -23,9 +23,33 @@ return [
     ],
     [
         'attribute' => 'popularFlag',
+        'label' => 'П',
+        'headerOptions' => ['title' => 'Популярность'],
         'format' => 'text',
         'value' => function ($model) {
             if ($model->popularFlag)
+                return 'Да';
+            return '';
+        }
+    ],
+    [
+        'attribute' => 'saleFlag',
+        'label' => 'А',
+        'headerOptions' => ['title' => Yii::$app->params['sale_text']],
+        'format' => 'text',
+        'value' => function ($model) {
+            if ($model->saleFlag)
+                return 'Да';
+            return '';
+        }
+    ],
+    [
+        'attribute' => 'freeFlag',
+        'label' => 'Д',
+        'headerOptions' => ['title' => Yii::$app->params['free_text']],
+        'format' => 'text',
+        'value' => function ($model) {
+            if ($model->freeFlag)
                 return 'Да';
             return '';
         }

@@ -23,8 +23,6 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="orders-form-bottom">
             <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-            <?= $form->field($model, 'country')->textInput(['maxlength' => true]) ?>
-
             <?= $form->field($model, 'region')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'town')->textInput(['maxlength' => true]) ?>

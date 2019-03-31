@@ -35,7 +35,7 @@ class CategoriesController extends AdminAccessController
             $query = Categories::find()->where(['parent' => $id]);
             $view = 'categories_show';
         }else{
-            $query = Categories::find()->select('goods.id, goods.title, goods.description, goods.keywords, goods.text, goods.img_count, goods.price, goods.rating')->filterWhere(['in', 'categories.id', $chars_values_id])->andFilterWhere(['categories.id' => $id])->andWhere(['not', ['goods.id' => 'NULL']])->joinWith('goods')->orderBy('goods.id')->asArray();
+            $query = Categories::find()->select('goods.id, goods.articul, goods.title, goods.description, goods.keywords, goods.text, goods.img_count, goods.price, goods.rating, goods.saleFlag, goods.freeFlag')->filterWhere(['in', 'categories.id', $chars_values_id])->andFilterWhere(['categories.id' => $id])->andWhere(['not', ['goods.id' => 'NULL']])->joinWith('goods')->orderBy('goods.id')->asArray();
             $view = 'goods_show';
         }
 

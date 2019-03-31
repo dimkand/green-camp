@@ -27,7 +27,8 @@
         "kv4nt/yii2-owl-carousel2": "*",
         "kartik-v/yii2-widget-rating": "*",
         "skeeks/yii2-assets-auto-compress": "*",
-        "rmrevin/yii2-minify-view": "^2.0"
+        "rmrevin/yii2-minify-view": "^2.0",
+        "kartik-v/yii2-widget-switchinput": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

@@ -395,7 +395,7 @@ header{
     display: flex;
     flex-direction: column;
     width: 242px;
-    height: 445px;
+    height: 495px;
     background-color: #fff;
     border: 1px solid #DDDDDD;
     padding: 20px;
@@ -483,6 +483,23 @@ header{
     transition: none;
     transform: translateY(3px);
 }
+.sale-icon{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: url("/web/img/sale.png");
+    background-size: cover;
+}
+.free-icon{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 55px;
+    height: 55px;
+    background: url("/web/img/free.png");
+    background-size: cover;
+    z-index: 30;
+}
 .ccat{
     width: 250px;
     height: 250px;
@@ -545,12 +562,18 @@ header{
     height: 100%;
 }
 #good_card_price{
+    position: relative;
     border: 1px solid #DDDDDD;
     background-color: #e2ffd6;
     border-radius: 10px;
     padding: 20px 30px;
     max-width: 300px;
     width: 100%;
+}
+#good_card_price .free-icon{
+    left: auto;
+    right: 15px;
+    top: 15px;
 }
 #good_card_price div{
     font-size: 24px;

@@ -12,6 +12,7 @@
 }
 .grid_td_img{
     padding: 5px 0!important;
+    position: relative;
 }
 #croppic_div_a{
     width: 514px;
@@ -112,6 +113,13 @@
 }
 .form_chars_container > div{
     margin-left: 5px;
+}
+.goods_form_switch{
+    display: flex;
+    align-items: center;
+}
+.goods_form_switch > div:not(:first-child){
+    margin-left: 30px;
 }
 
 /*footer*/

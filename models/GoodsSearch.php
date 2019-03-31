@@ -18,8 +18,8 @@ class GoodsSearch extends Goods
     public function rules()
     {
         return [
-            [['id', 'price'], 'integer'],
-            [['title', 'description', 'keywords', 'text', 'img_count', 'date', 'rating'], 'safe'],
+            [['price'], 'integer'],
+            [['articul', 'title', 'description', 'keywords', 'text', 'img_count', 'date', 'rating'], 'safe'],
         ];
     }
 
@@ -61,7 +61,6 @@ class GoodsSearch extends Goods
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
             'price' => $this->price,
             'date' => $this->date,
         ]);
@@ -70,7 +69,8 @@ class GoodsSearch extends Goods
             ->andFilterWhere(['like', 'description', $this->description])
             ->andFilterWhere(['like', 'keywords', $this->keywords])
             ->andFilterWhere(['like', 'text', $this->text])
-            ->andFilterWhere(['like', 'rating', $this->rating]);
+            ->andFilterWhere(['like', 'rating', $this->rating])
+            ->andFilterWhere(['like', 'articul', $this->articul]);
 
         return $dataProvider;
     }

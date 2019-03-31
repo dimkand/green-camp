@@ -29,8 +29,8 @@ class Orders extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['date'], 'safe'],
-            [['name', 'country', 'region', 'method', 'town', 'address', 'phone'], 'required'],
+            [['date', 'country'], 'safe'],
+            [['name', 'region', 'method', 'town', 'address', 'phone'], 'required'],
             [['name'], 'string', 'max' => 120],
             [['address'], 'string', 'max' => 255],
             [['phone'], 'match', 'pattern' => '/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/', 'message' => 'Неправельный формат номера телефона'],
@@ -78,11 +78,11 @@ class Orders extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Имя',
+            'name' => 'Имя и фамилия',
             'country' => 'Страна',
             'region' => 'Область',
             'town' => 'Город',
-            'address' => 'Адрес',
+            'address' => 'Отделения "Новой почты"',
             'method_id' => 'Способ оплаты',
             'phone' => 'Телефон',
             'date' => 'Дата',

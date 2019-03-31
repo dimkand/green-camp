@@ -38,10 +38,12 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <div>
             <div id="good_card_price">
-                <span>Артикул <?= $model['id']?></span>
+                <span class='free-icon' title='<?= Yii::$app->params['free_text'];?>'></span>
+                <span>Артикул № <?= $model['articul']?></span>
                 <div>
                     <?= Yii::$app->formatter->asCurrency($model->price) . ' грн.' ?>
                 </div>
+                <span class='sale-icon' title='<?= Yii::$app->params['sale_text'];?>'></span>
                 <a id="good_card_cart" class="btn btn-success" href="#" data-attr='<?= $model->id ?>'>Добавить в
                     корзину</a>
                 <a id="good_card_lower" href="#">Нашли дешевле? Снизим цену!</a>

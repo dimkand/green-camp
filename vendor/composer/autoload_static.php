@@ -48,6 +48,7 @@ class ComposerStaticInitca92174f94924455cc80624f2ab12859
         'k' => 
         array (
             'kv4nt\\owlcarousel\\' => 18,
+            'kartik\\switchinput\\' => 19,
             'kartik\\spinner\\' => 15,
             'kartik\\sidenav\\' => 15,
             'kartik\\rating\\' => 14,
@@ -176,6 +177,10 @@ class ComposerStaticInitca92174f94924455cc80624f2ab12859
         'kv4nt\\owlcarousel\\' => 
         array (
             0 => __DIR__ . '/..' . '/kv4nt/yii2-owl-carousel2',
+        ),
+        'kartik\\switchinput\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-switchinput',
         ),
         'kartik\\spinner\\' => 
         array (

@@ -4,6 +4,7 @@ namespace app\components;
 
 use app\models\Goods;
 use \Yii;
+use yii\helpers\Html;
 use yii\helpers\Url;
 
 class Helpers
@@ -16,7 +17,7 @@ class Helpers
         exit();
     }
 
-    public static function getGoodsImg($id, $count, $options = null)
+    public static function getGoodsImg($model, $options = null)
     {
         if(!isset($options['class']))
             $class = 'grid_img widget_img';
@@ -25,13 +26,13 @@ class Helpers
 
         $imgs = array();
 
-        if($count == 0){
+        if($model->img_count == 0){
             $imgs[]['content'] = "<img src='" . Url::base(true) . Yii::$app->params['default_img_path'] . "' class = '$class'>";
             return $imgs;
         }
 
-        for($i = 0; $i < $count; $i++){
-            $imgs[]['content'] = "<img src='".Url::base(true).'/'.Goods::$img_path.$id.'/'.'cimg_'.$i.'.jpeg'."' class = '$class'>";
+        for($i = 0; $i < $model->img_count; $i++){
+            $imgs[]['content'] = "<img src='".Url::base(true).'/'.Goods::$img_path.$model->id.'/'.'cimg_'.$i.'.jpeg'."' class = '$class'>";
         }
         return $imgs;
     }

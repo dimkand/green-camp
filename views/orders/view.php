@@ -56,7 +56,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'headerOptions' => ['width' => '80'],
                 'contentOptions' => ['class' => 'grid_td_img'],
                 'content' => function ($good_model) {
-                    return Helpers::getGoodsImg($good_model->goods->id, $good_model->goods->img_count)[0]['content'];
+                    return Helpers::getGoodsImg($good_model->goods)[0]['content'];
                 },
             ],
             [

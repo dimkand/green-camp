@@ -7,6 +7,7 @@ use app\components\CategoriesHelper;
 use dksoft\widgets\DropDownMenu;
 use app\models\Goods;
 use kartik\rating\StarRating;
+use kartik\switchinput\SwitchInput;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Goods */
@@ -17,6 +18,8 @@ use kartik\rating\StarRating;
 
     <?php $form = ActiveForm::begin(['action' => Url::current(['category_id' => $category_id])]); ?>
 
+    <?= $form->field($model, 'articul')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'title')->textInput(['maxlength' => true, 'id' => 'goods_form_title', 'ref' => 'title', '@input' => 'autoFill']) ?>
 
     <?= $form->field($model, 'description')->textInput(['maxlength' => true, 'id' => 'goods_form_description', 'ref' => 'description']) ?>
@@ -25,20 +28,29 @@ use kartik\rating\StarRating;
 
     <?= $form->field($model, 'text')->textarea(['rows' => 6, 'id' => 'ckedit']) ?>
 
-    <?= $form->field($model, 'price')->textInput() ?>
+    <div class="goods_form_switch">
+        <?= $form->field($model, 'price')->textInput() ?>
 
-    <?= $form->field($model, 'popularFlag')->radioList([
-        0 => 'Обычный',
-        1 => 'Популярный'
-    ]) ?>
+        <?= $form->field($model, 'popularFlag')->widget(SwitchInput::classname(), [
+            'type' => SwitchInput::CHECKBOX
+        ]);?>
 
-    <?php echo $form->field($model, 'rating')->label('Оценка')->widget(StarRating::classname(), [
-        'name' => 'rating_add',
-        'pluginOptions' => [
-            'showClear' => false,
-            'showCaption' => true,
-        ]
-    ]); ?>
+        <?= $form->field($model, 'saleFlag')->widget(SwitchInput::classname(), [
+            'type' => SwitchInput::CHECKBOX
+        ])->label('Скидка в подарок');?>
+
+        <?= $form->field($model, 'freeFlag')->widget(SwitchInput::classname(), [
+            'type' => SwitchInput::CHECKBOX
+        ])->label('Бесплаткая доставка');?>
+
+        <?php echo $form->field($model, 'rating')->label('Оценка')->widget(StarRating::classname(), [
+            'name' => 'rating_add',
+            'pluginOptions' => [
+                'showClear' => false,
+                'showCaption' => true,
+            ]
+        ]); ?>
+    </div>
 
     <div class="has-error">
         <?php

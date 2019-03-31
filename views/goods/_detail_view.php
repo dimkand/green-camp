@@ -5,7 +5,7 @@ use yii\helpers\Html;
 echo \yii\widgets\DetailView::widget([
     'model' => $model,
     'attributes' => [
-        'id',
+        'articul',
         'title',
         'description',
         'keywords',
@@ -19,7 +19,7 @@ echo \yii\widgets\DetailView::widget([
             'format' => 'raw',
             'value'=>(
             \yii\bootstrap\Carousel::widget([
-                'items' => Helpers::getGoodsImg($model->id, $model->img_count, ['class' => 'grid_img']),
+                'items' => Helpers::getGoodsImg($model, ['class' => 'grid_img']),
                 'options' => ['class' => 'slide'],
                 'controls' => [
                     Html::tag('span', '', ['class' => 'glyphicon glyphicon-chevron-left']),
@@ -33,6 +33,33 @@ echo \yii\widgets\DetailView::widget([
             'attribute' => 'price',
             'format' => ['currency']
         ],
+        [
+             'attribute' => 'popularFlag',
+             'format' => 'text',
+             'value' => function ($model) {
+                 if ($model->popularFlag)
+                     return 'Да';
+                 return '';
+             }
+        ],
+        [
+              'attribute' => 'saleFlag',
+              'format' => 'text',
+              'value' => function ($model) {
+                if ($model->saleFlag)
+                    return 'Да';
+                return '';
+                     }
+        ],
+        [
+                'attribute' => 'freeFlag',
+                'format' => 'text',
+                'value' => function ($model) {
+                    if ($model->freeFlag)
+                        return 'Да';
+                    return '';
+                }
+            ],
         [
             'attribute' => 'date',
             'format' => ['datetime', 'medium']
