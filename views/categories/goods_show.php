@@ -6,7 +6,7 @@ use yii\helpers\Url;
 <div id="goods_show">
 <?php foreach ($data as $good):?>
     <div class="good_show">
-        <a class="good_show_a" href="<?= Url::toRoute(['goods/show', 'id' => $good['id']]); ?>"></a>
+        <a class="good_show_a" href="<?= Url::toRoute(['t/' . $good['alias']]); ?>"></a>
         <div class="good_show_articul">Артикул <?= $good['articul']?></div>
         <div class="good_show_img">
             <?= $good['freeFlag'] ? "<span class='free-icon' title='" . Yii::$app->params['free_text'] . "'></span>" : '';?>

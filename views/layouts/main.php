@@ -11,9 +11,12 @@ use app\assets\AppAsset;
 use app\assets\FontAsset;
 use yii\bootstrap\NavBar;
 use yii\bootstrap\Nav;
+use app\components\Helpers;
 
 AppAsset::register($this);
 FontAsset::register($this);
+
+$tels = \app\models\Params::find()->one();
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -39,7 +42,7 @@ FontAsset::register($this);
     <header></header>
     <?php
     NavBar::begin([
-        'brandLabel' => '&copy; green-camp',
+        'brandLabel' => "<div>" . Helpers::parsePhone($tels['tel1']) . "</div>" . "<div>" . Helpers::parsePhone($tels['tel2']) . "</div>",
         'options' => [
             'class' => 'navbar navbar-fixed-top main_menu',
         ],

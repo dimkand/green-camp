@@ -53,7 +53,10 @@ class Goods extends Crud implements CartItemInterface
             [['img_count'], 'integer', 'max' => 120],
             [['rating'], 'number'],
             [['popularFlag'], 'popularLimit'],
-            [['saleFlag', 'freeFlag'], 'integer']
+            [['saleFlag', 'freeFlag'], 'integer'],
+            [['alias'], 'unique'],
+            [['alias'], 'required'],
+            [['alias'],  'match', 'pattern' => '/^[A-Z0-9\_\-]{1,255}$/i', 'message' => \Yii::$app->params['aliasErrorMessage']]
         ];
     }
 
@@ -194,7 +197,8 @@ class Goods extends Crud implements CartItemInterface
             'popularFlag' => 'Популярность',
             'saleFlag' => Yii::$app->params['sale_text'],
             'freeFlag' => Yii::$app->params['free_text'],
-            'articul' => 'Артикул'
+            'articul' => 'Артикул',
+            'alias' => 'Алиас'
         ];
     }
 }

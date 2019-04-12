@@ -22,6 +22,8 @@ use kartik\switchinput\SwitchInput;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true, 'id' => 'goods_form_title', 'ref' => 'title', '@input' => 'autoFill']) ?>
 
+    <?= $form->field($model, 'alias')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'description')->textInput(['maxlength' => true, 'id' => 'goods_form_description', 'ref' => 'description']) ?>
 
     <?= $form->field($model, 'keywords')->textInput(['maxlength' => true, 'id' => 'goods_form_keywords', 'ref' => 'keywords']) ?>

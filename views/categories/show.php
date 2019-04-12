@@ -12,6 +12,8 @@ if (empty($model)) {
     $this->render('_breadcrumbs', ['id' => $model->id, 'route' => 'show']);
 }
 
+echo $this->render('@views/cart/modal.php');
+
 ?>
     <div id="wrapper">
         <div id="leftblock">

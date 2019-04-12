@@ -65,6 +65,9 @@ $config = [
             'rules' => [
                 'admin' => 'admin/index',
                 '/' => 'pages/index',
+                '<alias:\w+>' => 'categories/show',
+                't/<alias:\w+>' => 'goods/show',
+                'goods/editlist/<alias:\w+>' => 'goods/editlist',
             ],
         ],
         'cart' => [

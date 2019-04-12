@@ -5,7 +5,7 @@ use yii\helpers\Url;
     <div id="main_categories_container">
         <?php foreach ($data as $category): ?>
             <figure class="category ccat effect-lily">
-                <a class="category_a" href="<?= Url::toRoute(['categories/show', 'id' => $category->id]) ?>"></a>
+                <a class="category_a" href="<?= Url::toRoute(['/' . $category->alias]) ?>"></a>
                 <div>
                     <img class="foto_img" src="<?= Url::base(true) . '/' . $category->img; ?>"
                          alt="<?= $category->title ?>">

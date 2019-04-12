@@ -3,23 +3,22 @@
 namespace app\models;
 
 use Yii;
-use yii\helpers\ArrayHelper;
 
 /**
- * This is the model class for table "goods_categories".
+ * This is the model class for table "params".
  *
  * @property int $id
- * @property int $goods_id
- * @property int $category_id
+ * @property string $tel1
+ * @property string $tel2
  */
-class GoodsCategories extends Crud
+class Params extends Crud
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'goods_categories';
+        return 'params';
     }
 
     /**
@@ -28,7 +27,7 @@ class GoodsCategories extends Crud
     public function rules()
     {
         return [
-            [['goods_id', 'category_id'], 'string'],
+            [['tel1', 'tel2'], 'string', 'max' => 255],
         ];
     }
 
@@ -39,8 +38,8 @@ class GoodsCategories extends Crud
     {
         return [
     'id' => 'ID',
-    'goods_id' => 'Goods ID',
-    'category_id' => 'Category ID',
+    'tel1' => 'Телефон 1',
+    'tel2' => 'Телефон 2',
         ];
     }
 }

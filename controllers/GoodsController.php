@@ -17,11 +17,11 @@ use yii\web\Response;
 class GoodsController extends AdminAccessController
 {
 
-    public function actionShow($id)
+    public function actionShow($alias)
     {
         $this->layout = 'main';
 
-        $model = Goods::findOne($id);
+        $model = Goods::findOne(['alias' => $alias]);
         return $this->render('show', ['model' => $model]);
     }
 
@@ -29,18 +29,18 @@ class GoodsController extends AdminAccessController
      * Lists all Goods models.
      * @return mixed
      */
-    public function actionEditlist($id = false)
+    public function actionEditlist($alias = false)
     {
         $searchModel = new GoodsSearch();
         $categories = Categories::find()->indexBy('id')->all();
 
-        if($id)
-            $model = Categories::findOne($id);
+        if($alias)
+            $model = Categories::findOne(['alias' => $alias]);
         else
             $model = new Categories();
 
-        if ($id)
-            $goods_id_array = $categories[$id]->getGoodsId();
+        if (isset($model->id) && $model->id)
+            $goods_id_array = $categories[$model->id]->getGoodsId();
         else
             $goods_id_array = Goods::find()->asArray()->column();
 
@@ -50,7 +50,7 @@ class GoodsController extends AdminAccessController
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
             'categories' => $categories,
-            'category_id' => $id,
+            'category_id' => $model->id ?? 0,
             'model' => $model
         ]);
     }

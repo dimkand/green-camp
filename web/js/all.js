@@ -41,6 +41,7 @@ function articlesAnim(){
                         $('#cart').removeClass('animated pulse');
                         anim.elem('#cart', 'animated pulse');
                     }
+                    $('#cart_modal').modal('show');
                 }, 'json');
             return false;
         });

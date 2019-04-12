@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <h4>Категории</h4>
         <?php
         echo Html::a('Все товары', ['goods/editlist']);
-        $params = CategoriesHelper::createItems($categories, CategoriesHelper::$CATEGORIES_FLAG, Yii::$app->homeUrl . 'goods/editlist');
+        $params = CategoriesHelper::createItems($categories, CategoriesHelper::$CATEGORIES_FLAG, Yii::$app->homeUrl . 'goods/editlist/');
 
         echo NavX::widget(
             $params

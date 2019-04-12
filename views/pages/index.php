@@ -8,6 +8,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => $model['main']->de
 $this->registerMetaTag(['name' => 'keywords', 'content' => $model['main']->keywords]);
 
 $this->title = $model['main']->title;
+
+echo $this->render('@views/cart/modal.php');
 ?>
     <h1><?= $model['main']->description ?></h1>
     <div id="js-line_1" class="line"></div>
@@ -16,7 +18,7 @@ $this->title = $model['main']->title;
         <div id="main_categories_container">
             <?php foreach ($categories as $category): ?>
                 <figure class="category cmain effect-lily">
-                    <a class="category_a" href="<?= Url::toRoute(['categories/show', 'id' => $category->id]) ?>"></a>
+                    <a class="category_a" href="<?= Url::toRoute(['/' . $category->alias]) ?>"></a>
                     <div>
                         <img class="foto_img" src="<?= Url::base(true) . '/' . $category->img; ?>"
                              alt="<?= $category->title ?>">

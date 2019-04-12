@@ -31,7 +31,8 @@ class AppAssetAdmin extends AssetBundle
         'js/vue.js',
         'js/croppic/js/croppic.js',
         'js/croppic/js/addCroppic.js',
-        'js/ckeditor/ckeditor.js'
+        'js/ckeditor/ckeditor.js',
+        'js/allAdmin.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

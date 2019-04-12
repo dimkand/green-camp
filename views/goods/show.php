@@ -10,6 +10,8 @@ echo $this->render('@views/metatags', ['model' => $model]);
 
 $this->params['breadcrumbs'][] = ['label' => 'Каталог', 'url' => ['/categories/show']];
 $this->params['breadcrumbs'][] = $this->title;
+
+echo $this->render('@views/cart/modal.php');
 ?>
 
 <div id="good_card">

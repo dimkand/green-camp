@@ -28,7 +28,9 @@ class CategoriesHelper
 
     private static function createItem(&$conteiner, $item, $path)
     {
-        $path_id = empty($item->id) ? '' : '?' . 'id=' . $item->id;
+        //$path_id = empty($item->id) ? '' : '?' . 'id=' . $item->id;
+        $path_id = $item->alias;
+
         $conteiner['items'][] = ['label' => $item->title, 'url' => $path . $path_id, 'id' => $item->id, 'type' => $item->type];
     }
 

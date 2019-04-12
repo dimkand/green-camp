@@ -18,24 +18,22 @@ use yii\web\Response;
  */
 class CategoriesController extends AdminAccessController
 {
-    public function actionShow($id = null)
+    public function actionShow($alias = null)
     {
         $this->layout = 'main';
 
         $chars_values_id = $_GET;
         unset($chars_values_id['page']);
         unset($chars_values_id['per-page']);
-        unset($chars_values_id['id']);
+        unset($chars_values_id['alias']);
 
-        $model = Categories::findOne($id);
+        $model = Categories::findOne(['alias' => $alias]);
 
         if(empty($chars_values_id) && ($model == false || $model->type == 1)){
-            if(is_null($id))
-                $id = 0;
-            $query = Categories::find()->where(['parent' => $id]);
+            $query = Categories::find()->where(['parent' => $model->id ?? 0]);
             $view = 'categories_show';
         }else{
-            $query = Categories::find()->select('goods.id, goods.articul, goods.title, goods.description, goods.keywords, goods.text, goods.img_count, goods.price, goods.rating, goods.saleFlag, goods.freeFlag')->filterWhere(['in', 'categories.id', $chars_values_id])->andFilterWhere(['categories.id' => $id])->andWhere(['not', ['goods.id' => 'NULL']])->joinWith('goods')->orderBy('goods.id')->asArray();
+            $query = Categories::find()->select('goods.id, goods.articul, goods.title, goods.description, goods.keywords, goods.text, goods.img_count, goods.price, goods.rating, goods.saleFlag, goods.freeFlag, goods.alias')->filterWhere(['in', 'categories.id', $chars_values_id])->andFilterWhere(['categories.id' => $model->id ?? 0])->andWhere(['not', ['goods.id' => 'NULL']])->joinWith('goods')->orderBy('goods.id')->asArray();
             $view = 'goods_show';
         }
 
@@ -52,8 +50,8 @@ class CategoriesController extends AdminAccessController
 
         }else{
             $rawCategories = Categories::find()->indexBy('id')->all();
-            $categories = CategoriesHelper::createItems($rawCategories, CategoriesHelper::$CATEGORIES_FLAG, '/categories/show');
-            $chars = CategoriesHelper::createItems($rawCategories, CategoriesHelper::$CHARS_FLAG, '', $id);
+            $categories = CategoriesHelper::createItems($rawCategories, CategoriesHelper::$CATEGORIES_FLAG, '/');
+            $chars = CategoriesHelper::createItems($rawCategories, CategoriesHelper::$CHARS_FLAG, '', $model->id ?? 0);
 
             return $this->render('show', [
                 'data' => $data,

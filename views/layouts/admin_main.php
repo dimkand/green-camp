@@ -47,6 +47,7 @@ AppAssetAdmin::register($this);
             ['label' => 'Отзывы', 'url' => ['/comments/editlist'], 'active' => $controller == 'comments'],
             ['label' => 'Заказы', 'url' => ['/orders/editlist'], 'active' => $controller == 'orders'],
             ['label' => 'Методы доставки', 'url' => ['/methods/editlist'], 'active' => $controller == 'methods'],
+            ['label' => 'Телефоны', 'url' => ['/params/editlist'], 'active' => $controller == 'params'],
             ['label' => 'Настройки', 'url' => ['/prefs/update'], 'active' => $controller == 'prefs'],
                 '<li>'
                 . Html::beginForm(['/admin/logout'], 'post')

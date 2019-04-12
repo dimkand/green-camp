@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use app\components\Helpers;
+
 /**
  * This is the model class for table "categories".
  *
@@ -30,6 +32,9 @@ class Categories extends Crud
             [['parent', 'type'], 'integer'],
             [['title', 'description'], 'string', 'max' => 120],
             [['keywords'], 'string', 'max' => 255],
+            [['alias'], 'unique'],
+            [['alias'], 'required'],
+            [['alias'],  'match', 'pattern' => '/^[A-Z0-9\_\-]{1,255}$/i', 'message' => \Yii::$app->params['aliasErrorMessage']]
         ];
     }
 
@@ -60,6 +65,7 @@ class Categories extends Crud
             'img' => 'Изображение',
             'parent' => 'Parent',
             'type' => 'Тип',
+            'alias' => 'Алиас'
         ];
     }
 
