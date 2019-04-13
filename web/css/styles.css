@@ -611,6 +611,9 @@ header{
 #good_card_tabs a:hover{
     background-color: #e2ffd6;
 }
+.phones > div{
+    margin-left: 15px;
+}
 #chars_show ul{
     list-style: none;
     padding-left: 0;

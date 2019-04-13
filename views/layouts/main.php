@@ -39,28 +39,29 @@ $tels = \app\models\Params::find()->one();
 <?php $this->beginBody() ?>
 
 <div class="wrap">
-    <header></header>
-    <?php
-    NavBar::begin([
-        'brandLabel' => "<div>" . Helpers::parsePhone($tels['tel1']) . "</div>" . "<div>" . Helpers::parsePhone($tels['tel2']) . "</div>",
-        'options' => [
-            'class' => 'navbar navbar-fixed-top main_menu',
-        ],
-    ]);
-    $controller = Yii::$app->controller->id;
-    $action = Yii::$app->controller->action->id;
-    echo Nav::widget([
-        'encodeLabels' => false,
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => [
-            ['label' => '<span class="glyphicon glyphicon-home"></span><span class="navbar-li-text">Главная</span>', 'url' => ['/'], 'active' => $action == 'index'],
-            ['label' => '<span class="glyphicon glyphicon-briefcase"></span><span class="navbar-li-text">Каталог</span>', 'url' => ['/categories/show'], 'active' => ($controller == 'categories') || ($controller == 'goods')],
-            ['label' => '<span class="glyphicon glyphicon-file"></span><span class="navbar-li-text">Статьи</span>', 'url' => ['/articles/showall'], 'active' => $controller == 'articles'],
-            ['label' => '<span class="glyphicon glyphicon-envelope"></span><span class="navbar-li-text">Контакты</span>', 'url' => ['/pages/contacts'], 'active' => $action == 'contacts'],
-        ],
-    ]);
-    NavBar::end();
-    ?>
+    <header>
+        <?php
+        NavBar::begin([
+            'brandLabel' => "<div>" . Helpers::parsePhone($tels['tel1']) . "</div>" . "<div>" . Helpers::parsePhone($tels['tel2']) . "</div>",
+            'options' => [
+                'class' => 'navbar navbar-fixed-top main_menu',
+            ],
+        ]);
+        $controller = Yii::$app->controller->id;
+        $action = Yii::$app->controller->action->id;
+        echo Nav::widget([
+            'encodeLabels' => false,
+            'options' => ['class' => 'navbar-nav navbar-right'],
+            'items' => [
+                ['label' => '<span class="glyphicon glyphicon-home"></span><span class="navbar-li-text">Главная</span>', 'url' => ['/'], 'active' => $action == 'index'],
+                ['label' => '<span class="glyphicon glyphicon-briefcase"></span><span class="navbar-li-text">Каталог</span>', 'url' => ['/categories/show'], 'active' => ($controller == 'categories') || ($controller == 'goods')],
+                ['label' => '<span class="glyphicon glyphicon-file"></span><span class="navbar-li-text">Статьи</span>', 'url' => ['/articles/showall'], 'active' => $controller == 'articles'],
+                ['label' => '<span class="glyphicon glyphicon-envelope"></span><span class="navbar-li-text">Контакты</span>', 'url' => ['/pages/contacts'], 'active' => $action == 'contacts'],
+            ],
+        ]);
+        NavBar::end();
+        ?>
+    </header>
 
     <div class="container">
         <?= Breadcrumbs::widget([

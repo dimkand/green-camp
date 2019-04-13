@@ -5,6 +5,7 @@ use yii\helpers\Url;
 use app\models\Goods;
 use yii\bootstrap\Tabs;
 use kartik\rating\StarRating;
+use app\components\Helpers;
 
 echo $this->render('@views/metatags', ['model' => $model]);
 
@@ -55,6 +56,11 @@ echo $this->render('@views/cart/modal.php');
                 'value' => $model->rating,
                 'pluginOptions' => ['disabled'=>true, 'showClear'=>false]
             ]);?>
+            <div class="phones">
+                <span>Наши телефоны:</span>
+                <div><?= Helpers::parsePhone($tels['tel1'])?></div>
+                <div><?= Helpers::parsePhone($tels['tel2'])?></div>
+            </div>
         </div>
     </div>
     <div id="good_card_tabs">

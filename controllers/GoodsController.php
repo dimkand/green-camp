@@ -4,12 +4,11 @@ namespace app\controllers;
 
 use app\components\Helpers;
 use app\models\Categories;
-use app\models\CharsCategories;
 use Yii;
 use app\models\Goods;
 use app\models\GoodsSearch;
 use yii\web\NotFoundHttpException;
-use yii\web\Response;
+use app\models\Params;
 
 /**
  * GoodsController implements the CRUD actions for Goods model.
@@ -21,8 +20,10 @@ class GoodsController extends AdminAccessController
     {
         $this->layout = 'main';
 
+        $tels = Params::find()->one();
+
         $model = Goods::findOne(['alias' => $alias]);
-        return $this->render('show', ['model' => $model]);
+        return $this->render('show', ['model' => $model, 'tels' => $tels]);
     }
 
     /**
