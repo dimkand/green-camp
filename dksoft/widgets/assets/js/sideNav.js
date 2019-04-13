@@ -23,7 +23,7 @@ function registerEvents(){
     $('.hamburger').bind('click', function () {
         $('.dk_sidenav .shadow').toggle();
         var ul = $('.dk_sidenav > ul');
-        if(!ul.is(':visible')){
+        if(ul.is(':hidden')){
             ul.css({left : '-=100%'}).show().animate({left:'+=100%'},200);
             $('.dk_sidenav').css('width', '100%');
         }
@@ -49,8 +49,5 @@ function registerEvents(){
  * sidenav
  */
 $(function(){
-    registerEvents();
-});
-$(window).resize(function(){
     registerEvents();
 });
