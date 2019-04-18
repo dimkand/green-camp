@@ -74,7 +74,7 @@ class Helpers
     public static function parsePhone($phone)
     {
         $country_code = substr($phone, 0, 1);
-        $operator_code = substr($phone, 0, 3);
+        $operator_code = substr($phone, 1, 3);
         $part_1 = substr($phone, 3, 3);
         $part_2 = substr($phone, 6, 2);
         $part_3 = substr($phone, 8, 2);
