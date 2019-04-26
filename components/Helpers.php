@@ -75,9 +75,9 @@ class Helpers
     {
         $country_code = substr($phone, 0, 1);
         $operator_code = substr($phone, 1, 3);
-        $part_1 = substr($phone, 3, 3);
-        $part_2 = substr($phone, 6, 2);
-        $part_3 = substr($phone, 8, 2);
+        $part_1 = substr($phone, 4, 3);
+        $part_2 = substr($phone, 7, 2);
+        $part_3 = substr($phone, 9, 2);
         return '+'.$country_code.'('.$operator_code.') '.$part_1.'-'.$part_2.'-'.$part_3;
     }
 
