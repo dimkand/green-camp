@@ -126,9 +126,10 @@ class Helpers
         );
 
         $str = strtr($str, $converter);// переводим в транслит
+        $str = strtr($str, ['-' => '_']);// переводим в транслит
         $str = strtolower($str);// в нижний регистр
         $str = preg_replace('~[^-a-z0-9_]+~u', '_', $str);// заменям все ненужное нам на "_"
-        $str = trim($str, "-");// удаляем начальные и конечные '-'
+        $str = trim($str, "_");// удаляем начальные и конечные '-'
         return $str;
     }
 }
