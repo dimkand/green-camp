@@ -30,6 +30,15 @@ $tels = \app\models\Params::find()->one();
     <?php $this->head() ?>
 </head>
 <body>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140785796-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-‎140785796-1');
+</script>
 <script>
     var bodies = document.getElementsByTagName('body');
     for (i = 0; i < bodies.length; i++) {
