@@ -39,7 +39,7 @@ class CategoriesController extends AdminAccessController
         }
 
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 6, 'params' => $_GET]);
-        $data = $query->offset($pages->offset)->limit($pages->limit)->all();
+        $data = $query->offset($pages->offset)->limit(6)->all();
 
         if (Yii::$app->request->isAjax && isset($_GET)){
             if (empty($data))
