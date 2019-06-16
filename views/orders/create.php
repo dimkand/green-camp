@@ -27,10 +27,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <?= $form->field($model, 'town')->textInput(['maxlength' => true]) ?>
 
-            <?= $form->field($model, 'address')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'cell')->textInput(['maxlength' => true]) ?>
+
+            <?= $form->field($model, 'address')->textInput(['maxlength' => true])->hint('Адрес заполняется при выборе адресной доставки') ?>
 
             <?= $form->field($model, 'phone')->widget(\yii\widgets\MaskedInput::className(), [
-                'mask' => '+9(999) 999-99-99',
+                'mask' => '+38(999) 999-99-99',
                 'clientOptions' => [
                     'removeMaskOnSubmit' => true,
                 ]

@@ -23,6 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'name',
+            'cell',
             'address',
             [
                 'attribute'=>'phone',

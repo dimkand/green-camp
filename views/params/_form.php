@@ -14,14 +14,14 @@ use yii\widgets\MaskedInput;
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'tel1')->widget(MaskedInput::className(), [
-        'mask' => '+9(999) 999-99-99',
+        'mask' => '+38(999) 999-99-99',
         'clientOptions' => [
             'removeMaskOnSubmit' => true,
         ]
     ]); ?>
 
     <?= $form->field($model, 'tel2')->widget(MaskedInput::className(), [
-        'mask' => '+9(999) 999-99-99',
+        'mask' => '+38(999) 999-99-99',
         'clientOptions' => [
             'removeMaskOnSubmit' => true,
         ]

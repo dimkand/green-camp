@@ -58,7 +58,11 @@ $this->title = 'Заказ №' . $model->id;
             <td><?= $model->town ?></td>
         </tr>
         <tr>
-            <th>Отделения "Новой почты"</th>
+            <th>Отделения "Новой почты" или "Intime"</th>
+            <td><?= $model->cell ?></td>
+        </tr>
+        <tr>
+            <th>Адрес</th>
             <td><?= $model->address ?></td>
         </tr>
         <tr>

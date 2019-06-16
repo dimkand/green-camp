@@ -9,9 +9,11 @@ use Yii;
  *
  * @property int $id
  * @property string $name
+ * @property string $cell
  * @property string $address
  * @property string $tel
  * @property string $date
+ * @property string $phone
  */
 class Orders extends \yii\db\ActiveRecord
 {
@@ -30,10 +32,10 @@ class Orders extends \yii\db\ActiveRecord
     {
         return [
             [['date', 'country'], 'safe'],
-            [['name', 'region', 'method', 'town', 'address', 'phone'], 'required'],
+            [['name', 'region', 'method', 'town', 'cell', 'phone'], 'required'],
             [['name'], 'string', 'max' => 120],
-            [['address'], 'string', 'max' => 255],
-            [['phone'], 'match', 'pattern' => '/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/', 'message' => 'Неправельный формат номера телефона'],
+            [['cell', 'address'], 'string', 'max' => 255],
+            [['phone'], 'match', 'pattern' => '/^\(?\d{3}\)?\d{3}\-?\d{2}\-?\d{2}$/', 'message' => 'Неправельный формат номера телефона'],
         ];
     }
 
@@ -82,7 +84,8 @@ class Orders extends \yii\db\ActiveRecord
             'country' => 'Страна',
             'region' => 'Область',
             'town' => 'Город',
-            'address' => 'Отделения "Новой почты"',
+            'cell' => 'Отделение "Новой почты" или "Intime"',
+            'address' => 'Адрес',
             'method_id' => 'Способ оплаты',
             'phone' => 'Телефон',
             'date' => 'Дата',

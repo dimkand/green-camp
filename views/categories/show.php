@@ -27,6 +27,7 @@ echo $this->render('@views/cart/modal.php');
             <?php if (!empty($chars['items'])): ?>
                 <div id="dk_filter">
                     <form>
+                        <input class="dk_filter_alias" type="hidden" name="alias" value="">
                         <ul class="nav nav-pills nav-stacked">
                             <?php foreach ($chars['items'] as $char): ?>
                                 <li>

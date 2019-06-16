@@ -22,6 +22,15 @@ $tels = \app\models\Params::find()->one();
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140785796-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-‎140785796-1');
+    </script>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,15 +39,6 @@ $tels = \app\models\Params::find()->one();
     <?php $this->head() ?>
 </head>
 <body>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140785796-1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-‎140785796-1');
-</script>
 <script>
     var bodies = document.getElementsByTagName('body');
     for (i = 0; i < bodies.length; i++) {
@@ -64,7 +64,7 @@ $tels = \app\models\Params::find()->one();
             'items' => [
                 ['label' => '<span class="glyphicon glyphicon-home"></span><span class="navbar-li-text">Главная</span>', 'url' => ['/'], 'active' => $action == 'index'],
                 ['label' => '<span class="glyphicon glyphicon-briefcase"></span><span class="navbar-li-text">Каталог</span>', 'url' => ['/categories/show'], 'active' => ($controller == 'categories') || ($controller == 'goods')],
-                ['label' => '<span class="glyphicon glyphicon-file"></span><span class="navbar-li-text">Статьи</span>', 'url' => ['/articles/showall'], 'active' => $controller == 'articles'],
+                ['label' => '<span class="glyphicon glyphicon-file"></span><span class="navbar-li-text">Доставка и возврат товара</span>', 'url' => ['/articles/showall'], 'active' => $controller == 'articles'],
                 ['label' => '<span class="glyphicon glyphicon-envelope"></span><span class="navbar-li-text">Контакты</span>', 'url' => ['/pages/contacts'], 'active' => $action == 'contacts'],
             ],
         ]);

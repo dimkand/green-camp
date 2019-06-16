@@ -21,10 +21,12 @@ $this->params['breadcrumbs'][] = 'Редактирование';
 
         <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
+        <?= $form->field($model, 'cell')->textInput(['maxlength' => true]) ?>
+
         <?= $form->field($model, 'address')->textInput(['maxlength' => true]) ?>
 
         <?= $form->field($model, 'phone')->widget(\yii\widgets\MaskedInput::className(), [
-            'mask' => '+9(999) 999-99-99',
+            'mask' => '+38(999) 999-99-99',
             'clientOptions' => [
                 'removeMaskOnSubmit' => true,
             ]

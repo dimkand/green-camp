@@ -26,9 +26,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php else: ?>
 
-        <p id="contact_p">
-            Если у вас есть деловое предложение, напишите нам.
-        </p>
+        <div id="contact_p">
+            <p><?= $model->text?></p>
+            <p>Если у вас есть деловое предложение, напишите нам.</p>
+        </div>
 
         <div class="row">
             <div class="col-lg-5">

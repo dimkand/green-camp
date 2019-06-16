@@ -19,7 +19,7 @@ class OrdersSearch extends Orders
     {
         return [
             [['id'], 'integer'],
-            [['name', 'address', 'phone', 'date'], 'safe'],
+            [['name', 'cell', 'address', 'phone', 'date'], 'safe'],
         ];
     }
 
@@ -64,6 +64,7 @@ class OrdersSearch extends Orders
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'cell', $this->cell])
             ->andFilterWhere(['like', 'address', $this->address])
             ->andFilterWhere(['like', 'phone', $this->phone]);
 

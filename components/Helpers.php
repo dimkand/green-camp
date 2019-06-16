@@ -24,6 +24,9 @@ class Helpers
         else
             $class = $options['class'];
 
+        if (!$model)
+            return null;
+
         $imgs = array();
 
         if($model->img_count == 0){
@@ -73,12 +76,11 @@ class Helpers
 
     public static function parsePhone($phone)
     {
-        $country_code = substr($phone, 0, 1);
-        $operator_code = substr($phone, 1, 3);
-        $part_1 = substr($phone, 4, 3);
-        $part_2 = substr($phone, 7, 2);
-        $part_3 = substr($phone, 9, 2);
-        return '+'.$country_code.'('.$operator_code.') '.$part_1.'-'.$part_2.'-'.$part_3;
+        $operator_code = substr($phone, 0, 3);
+        $part_1 = substr($phone, 3, 3);
+        $part_2 = substr($phone, 6, 2);
+        $part_3 = substr($phone, 8, 2);
+        return '+38('.$operator_code.') '.$part_1.'-'.$part_2.'-'.$part_3;
     }
 
     public static function displayHelper($key, $alt = false)
