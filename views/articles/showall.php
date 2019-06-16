@@ -1,7 +1,7 @@
 <?= $this->render('@views/metatags', ['model' => $model]);?>
 
 <div id="articles">
-    <h1>Все статьи</h1>
+    <h1><?=$model->title?></h1>
     <div id="articles_list">
         <?= $this->render('@views/articles/articles', ['articles' => $models, 'page' => $page]); ?>
     </div>
