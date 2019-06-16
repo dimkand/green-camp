@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Url;
+use kartik\slider\Slider;
 
 if (empty($model)) {
     $this->title = 'Каталог';
@@ -27,6 +28,30 @@ echo $this->render('@views/cart/modal.php');
             <?php if (!empty($chars['items'])): ?>
                 <div id="dk_filter">
                     <form>
+
+                        <div id="dk_filter_slider">
+                            <span>Цена:</span>
+                            <div class="slider-wrap">
+                                <?=
+                                Slider::widget([
+                                    'name'=>'price',
+                                    'value'=>'0,10000',
+                                    'sliderColor'=>Slider::TYPE_SUCCESS,
+                                    'handleColor'=>Slider::TYPE_SUCCESS,
+                                    'pluginOptions'=>[
+                                        'min'=>0,
+                                        'max'=>10000,
+                                        'step'=>5,
+                                        'range'=>true
+                                    ],
+                                ])?>
+                            </div>
+                            <div class="dk_filter_slider_badge">
+                                <b class="badge">0</b>
+                                <b class="badge">10 000</b>
+                            </div>
+                        </div>
+
                         <input class="dk_filter_alias" type="hidden" name="alias" value="">
                         <ul class="nav nav-pills nav-stacked">
                             <?php foreach ($chars['items'] as $char): ?>

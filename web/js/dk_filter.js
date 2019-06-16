@@ -43,6 +43,15 @@ function filterRun(baseUrl){
         input.val(alias);
     }
 
+    function slider(){
+        $('#dk_filter_slider .slider-handle').mouseup(function () {
+            getContent();
+        });
+        // $('.slider-handle').mouseleave(function () {
+        //     getContent();
+        // });
+    }
+
 // Механника работы всплывающего #dk_filter_submit
 //     $('.dk_filter_values input').change(function(){
 //         var all_inputs = $('#dk_filter').find('input');
@@ -69,18 +78,8 @@ function filterRun(baseUrl){
     //     return false;
     // });
 
-    $(document).on('click', '.ajax_pagination a', function(){
-        var li = $(this).parent();
-        if(li.hasClass('active') || li.hasClass('disabled'))
-            return false;
-
-        $.get($(this).attr('href'),  function(html){
-            _addHtml(html);
-        }, 'html');
-        return false;
-    });
-
     $(function () {
         setAlias();
+        slider();
     });
 }

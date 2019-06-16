@@ -192,4 +192,13 @@ return array (
       '@kartik/switchinput' => $vendorDir . '/kartik-v/yii2-widget-switchinput',
     ),
   ),
+  'kartik-v/yii2-slider' => 
+  array (
+    'name' => 'kartik-v/yii2-slider',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@kartik/slider' => $vendorDir . '/kartik-v/yii2-slider/src',
+    ),
+  ),
 );

@@ -18,5 +18,8 @@
     $(document).scroll(function(){
         animation();
     });
+    $(document).on('pjax:success', function () {
+        animation();
+    });
 
 })(jQuery);

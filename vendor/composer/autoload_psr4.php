@@ -23,6 +23,7 @@ return array(
     'kv4nt\\owlcarousel\\' => array($vendorDir . '/kv4nt/yii2-owl-carousel2'),
     'kartik\\switchinput\\' => array($vendorDir . '/kartik-v/yii2-widget-switchinput'),
     'kartik\\spinner\\' => array($vendorDir . '/kartik-v/yii2-widget-spinner/src'),
+    'kartik\\slider\\' => array($vendorDir . '/kartik-v/yii2-slider/src'),
     'kartik\\sidenav\\' => array($vendorDir . '/kartik-v/yii2-widget-sidenav'),
     'kartik\\rating\\' => array($vendorDir . '/kartik-v/yii2-widget-rating/src'),
     'kartik\\nav\\' => array($vendorDir . '/kartik-v/yii2-nav-x/src'),

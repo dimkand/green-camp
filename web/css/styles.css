@@ -6,6 +6,11 @@ body{
     background-color: #f9ffe9;
     font-family: 'PT Sans', sans-serif;
 }
+.pagination_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .pagination > .active > a, .pagination > .active > a:hover{
     background-color: #56ac56;
     border-color: #56ac56;
@@ -671,9 +676,25 @@ header{
 }
 /*dk_filter*/
 #dk_filter{
-    margin-top: 10px;
+    margin-top: 40px;
     position: relative;
     z-index: 1;
+}
+#dk_filter_slider{
+    margin-bottom: 10px;
+}
+#dk_filter_slider .slider-wrap{
+    width: 90%;
+    margin: 0 auto;
+}
+#dk_filter_slider .slider{
+    width: 100%;
+}
+.dk_filter_slider_badge{
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 #dk_filter form > ul{
     width: 100%;

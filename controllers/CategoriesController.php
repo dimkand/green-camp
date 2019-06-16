@@ -10,6 +10,7 @@ use Yii;
 use app\models\Categories;
 use app\models\CategoriesSearch;
 use yii\data\Pagination;
+use yii\helpers\ArrayHelper;
 use yii\web\NotFoundHttpException;
 use yii\web\Response;
 
@@ -27,14 +28,28 @@ class CategoriesController extends AdminAccessController
         unset($chars_values_id['per-page']);
         unset($chars_values_id['alias']);
 
+        if (isset($_GET['price'])) unset($chars_values_id['price']);
+
         $model = Categories::findOne(['alias' => $alias]);
 
         if(empty($chars_values_id) && ($model == false || $model->type == 1)){
             $query = Categories::find()->where(['parent' => $model->id ?? 0]);
             $view = 'categories_show';
         }else{
+            $price = $_GET['price'] ?? '';
+            $price = explode(',', $price);
+            $priceMin = ArrayHelper::getValue($price, 0);
+            $priceMax = ArrayHelper::getValue($price, 1);
             $chars_values_id = array_merge($chars_values_id, [$model->id]);
-            $query = Categories::find()->select('goods.id, goods.articul, goods.title, goods.description, goods.keywords, goods.text, goods.img_count, goods.price, goods.rating, goods.saleFlag, goods.freeFlag, goods.alias')->filterWhere(['in', 'categories.id', $chars_values_id])->andWhere(['not', ['goods.id' => 'NULL']])->joinWith('goods')->orderBy('goods.id')->asArray();
+            $query = Goods::find()
+                ->joinWith('categories')
+                ->where(['in', 'categories.id', $chars_values_id])
+                ->andFilterWhere([
+                    'AND',
+                    ['>=', 'price', $priceMin],
+                    ['<=', 'price', $priceMax]
+                ])
+                ->groupBy('goods.id');
             $view = 'goods_show';
         }
 

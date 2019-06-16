@@ -50,6 +50,7 @@ class ComposerStaticInitca92174f94924455cc80624f2ab12859
             'kv4nt\\owlcarousel\\' => 18,
             'kartik\\switchinput\\' => 19,
             'kartik\\spinner\\' => 15,
+            'kartik\\slider\\' => 14,
             'kartik\\sidenav\\' => 15,
             'kartik\\rating\\' => 14,
             'kartik\\nav\\' => 11,
@@ -185,6 +186,10 @@ class ComposerStaticInitca92174f94924455cc80624f2ab12859
         'kartik\\spinner\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-spinner/src',
+        ),
+        'kartik\\slider\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-slider/src',
         ),
         'kartik\\sidenav\\' => 
         array (
