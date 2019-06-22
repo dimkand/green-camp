@@ -684,17 +684,23 @@ header{
     margin-bottom: 10px;
 }
 #dk_filter_slider .slider-wrap{
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 }
-#dk_filter_slider .slider{
-    width: 100%;
+.slider-wrap .irs--flat .irs-bar{
+    background-color: #33ac3e;
 }
-.dk_filter_slider_badge{
-    margin-top: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.slider-wrap .irs--flat .irs-handle i, .slider-wrap .irs--flat .irs-handle:hover i, .slider-wrap .irs--flat .irs-handle.state_hover i{
+    background: none;
+}
+.slider-wrap .irs--flat .irs-handle{
+    background-color: #2a8c32;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+.irs--flat .irs-from, .irs--flat .irs-to, .irs--flat .irs-single{
+    background-color: #FF7747;
 }
 #dk_filter form > ul{
     width: 100%;

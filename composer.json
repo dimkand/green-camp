@@ -29,7 +29,8 @@
         "skeeks/yii2-assets-auto-compress": "*",
         "rmrevin/yii2-minify-view": "^2.0",
         "kartik-v/yii2-widget-switchinput": "*",
-        "kartik-v/yii2-slider": "dev-master"
+        "kartik-v/yii2-slider": "dev-master",
+        "yii2mod/yii2-ion-slider": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

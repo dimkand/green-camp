@@ -28,7 +28,7 @@ class CategoriesController extends AdminAccessController
         unset($chars_values_id['per-page']);
         unset($chars_values_id['alias']);
 
-        if (isset($_GET['price'])) unset($chars_values_id['price']);
+        if (isset($_GET['slider'])) unset($chars_values_id['slider']);
 
         $model = Categories::findOne(['alias' => $alias]);
 
@@ -36,14 +36,13 @@ class CategoriesController extends AdminAccessController
             $query = Categories::find()->where(['parent' => $model->id ?? 0]);
             $view = 'categories_show';
         }else{
-            $price = $_GET['price'] ?? '';
-            $price = explode(',', $price);
+            $price = $_GET['slider'] ?? '';
+            $price = explode(';', $price);
             $priceMin = ArrayHelper::getValue($price, 0);
             $priceMax = ArrayHelper::getValue($price, 1);
-            $chars_values_id = array_merge($chars_values_id, [$model->id]);
             $query = Goods::find()
                 ->joinWith('categories')
-                ->where(['in', 'categories.id', $chars_values_id])
+                ->where(['in', 'categories.id', $chars_values_id ? $chars_values_id : $model->id])
                 ->andFilterWhere([
                     'AND',
                     ['>=', 'price', $priceMin],

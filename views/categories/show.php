@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Url;
-use kartik\slider\Slider;
+use yii2mod\slider\IonSlider;
 
 if (empty($model)) {
     $this->title = 'Каталог';
@@ -33,22 +33,20 @@ echo $this->render('@views/cart/modal.php');
                             <span>Цена:</span>
                             <div class="slider-wrap">
                                 <?=
-                                Slider::widget([
-                                    'name'=>'price',
-                                    'value'=>'0,10000',
-                                    'sliderColor'=>Slider::TYPE_SUCCESS,
-                                    'handleColor'=>Slider::TYPE_SUCCESS,
-                                    'pluginOptions'=>[
-                                        'min'=>0,
-                                        'max'=>10000,
-                                        'step'=>5,
-                                        'range'=>true
-                                    ],
-                                ])?>
-                            </div>
-                            <div class="dk_filter_slider_badge">
-                                <b class="badge">0</b>
-                                <b class="badge">10 000</b>
+                                IonSlider::widget([
+                                    'name' => 'slider',
+                                    'type' => IonSlider::TYPE_DOUBLE,
+                                    'pluginOptions' => [
+                                        'min' => 0,
+                                        'max' => 15000,
+                                        'from' => 0,
+                                        'to' => 15000,
+                                        'step' => 1,
+//                                        'hide_min_max' => true,
+//                                        'hide_from_to' => true
+                                        'onFinish' => new \yii\web\JsExpression('() => filter.getContent()')
+                                    ]
+                                ]);?>
                             </div>
                         </div>
 
@@ -93,11 +91,6 @@ echo $this->render('@views/cart/modal.php');
         </div>
     </div>
 
-    <script src="<?= Url::base(true) ?>/js/dk_filter.js"></script>
-    <script>
-        window.addEventListener('DOMContentLoaded', function () {
-            filterRun("<?= Url::base(true)?>");
-        });
-    </script>
-
-<?php $this->registerJsFile('js/categories/categories.js', ['depends' => \app\assets\AppAsset::className()]);
+<?php $this->registerJsFile('js/categories/categories.js', ['depends' => \app\assets\AppAsset::className()]);?>
+<?php $this->registerJsFile('js/dk_filter.js');?>
+<?php $this->registerJs('filter.run()', \yii\web\View::POS_READY);?>

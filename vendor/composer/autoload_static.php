@@ -26,6 +26,7 @@ class ComposerStaticInitca92174f94924455cc80624f2ab12859
             'yii\\composer\\' => 13,
             'yii\\bootstrap\\' => 14,
             'yii\\' => 4,
+            'yii2mod\\slider\\' => 15,
             'yii2mod\\rating\\' => 15,
             'yii2mod\\cart\\' => 13,
         ),
@@ -148,6 +149,10 @@ class ComposerStaticInitca92174f94924455cc80624f2ab12859
         'yii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
+        ),
+        'yii2mod\\slider\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/yii2mod/yii2-ion-slider',
         ),
         'yii2mod\\rating\\' => 
         array (

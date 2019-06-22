@@ -109,6 +109,30 @@
         ]
     },
     {
+        "name": "bower-asset/ionrangeslider",
+        "version": "2.3.0",
+        "version_normalized": "2.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/IonDen/ion.rangeSlider.git",
+            "reference": "c98c10d3d360aa52e997bb8e4fd371c958f78e4b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/IonDen/ion.rangeSlider/zipball/c98c10d3d360aa52e997bb8e4fd371c958f78e4b",
+            "reference": "c98c10d3d360aa52e997bb8e4fd371c958f78e4b",
+            "shasum": null
+        },
+        "require": {
+            "bower-asset/jquery": ">=1.8"
+        },
+        "type": "bower-asset",
+        "installation-source": "dist",
+        "license": [
+            "MIT"
+        ]
+    },
+    {
         "name": "bower-asset/jquery",
         "version": "3.2.1",
         "version_normalized": "3.2.1.0",
@@ -4398,6 +4422,59 @@
             }
         ],
         "description": "Yii2 Shopping cart"
+    },
+    {
+        "name": "yii2mod/yii2-ion-slider",
+        "version": "1.2",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yii2mod/yii2-ion-slider.git",
+            "reference": "ef496e2187875048ec34885be42301c98d9a8506"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yii2mod/yii2-ion-slider/zipball/ef496e2187875048ec34885be42301c98d9a8506",
+            "reference": "ef496e2187875048ec34885be42301c98d9a8506",
+            "shasum": ""
+        },
+        "require": {
+            "bower-asset/ionrangeslider": "*",
+            "yiisoft/yii2": "*"
+        },
+        "require-dev": {
+            "friendsofphp/php-cs-fixer": "~2.0"
+        },
+        "time": "2017-04-15T22:14:25+00:00",
+        "type": "yii2-extension",
+        "extra": {
+            "asset-installer-paths": {
+                "bower-asset-library": "vendor/bower"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "yii2mod\\slider\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Igor Chepurnoy",
+                "email": "igorzfort@gmail.com"
+            }
+        ],
+        "description": "Ion.RangeSlider Widget for Yii 2",
+        "keywords": [
+            "yii2",
+            "yii2 ion slider",
+            "yii2 range slider",
+            "yii2 slider"
+        ]
     },
     {
         "name": "yii2mod/yii2-star-rating",

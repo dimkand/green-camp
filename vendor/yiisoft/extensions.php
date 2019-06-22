@@ -201,4 +201,13 @@ return array (
       '@kartik/slider' => $vendorDir . '/kartik-v/yii2-slider/src',
     ),
   ),
+  'yii2mod/yii2-ion-slider' => 
+  array (
+    'name' => 'yii2mod/yii2-ion-slider',
+    'version' => '1.2.0.0',
+    'alias' => 
+    array (
+      '@yii2mod/slider' => $vendorDir . '/yii2mod/yii2-ion-slider',
+    ),
+  ),
 );

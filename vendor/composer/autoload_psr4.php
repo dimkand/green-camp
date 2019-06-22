@@ -14,6 +14,7 @@ return array(
     'yii\\composer\\' => array($vendorDir . '/yiisoft/yii2-composer'),
     'yii\\bootstrap\\' => array($vendorDir . '/yiisoft/yii2-bootstrap/src'),
     'yii\\' => array($vendorDir . '/yiisoft/yii2'),
+    'yii2mod\\slider\\' => array($vendorDir . '/yii2mod/yii2-ion-slider'),
     'yii2mod\\rating\\' => array($vendorDir . '/yii2mod/yii2-star-rating'),
     'yii2mod\\cart\\' => array($vendorDir . '/yii2mod/yii2-cart'),
     'tubalmartin\\CssMin\\' => array($vendorDir . '/tubalmartin/cssmin/src'),
