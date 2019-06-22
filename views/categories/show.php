@@ -32,8 +32,7 @@ echo $this->render('@views/cart/modal.php');
                         <div id="dk_filter_slider">
                             <span>Цена:</span>
                             <div class="slider-wrap">
-                                <?=
-                                IonSlider::widget([
+                                <?= IonSlider::widget([
                                     'name' => 'slider',
                                     'type' => IonSlider::TYPE_DOUBLE,
                                     'pluginOptions' => [
@@ -45,7 +44,7 @@ echo $this->render('@views/cart/modal.php');
 //                                        'hide_min_max' => true,
 //                                        'hide_from_to' => true
                                         'onFinish' => new \yii\web\JsExpression('() => filter.getContent()')
-                                    ]
+                                    ],
                                 ]);?>
                             </div>
                         </div>

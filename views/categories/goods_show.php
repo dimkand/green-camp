@@ -5,7 +5,7 @@ use yii\widgets\Pjax;
 use app\models\Goods;
 use yii\widgets\LinkPager;
 
-Pjax::begin();
+Pjax::begin(['id' => 'goods-content']);
 ?>
 <div id="goods_show">
 <?php foreach ($data as $good):
@@ -18,19 +18,7 @@ Pjax::begin();
             <?= $good['freeFlag'] ? "<span class='free-icon' title='" . Yii::$app->params['free_text'] . "'></span>" : '';?>
             <img src="<?= Url::base(true) . '/' . Goods::$img_path . $good['id'] ?>/cimg_0.jpeg" alt="<?= $good['title']?>">
         </div>
-        <?= \kartik\rating\StarRating::widget([
-            'name' => 'rating',
-            'value' => $good['rating'],
-            'pluginOptions' => [
-                'disabled' => true,
-                'showClear' => false,
-                'theme' => 'krajee-uni',
-                'size' => 'sm',
-                'showCaption' => false,
-            ]
-        ]);?>
-        <?php
-        ?>
+
         <div class="good_show_title"><?= $good['title'] ?></div>
         <div class="good_show_wr">
             <div class="good_show_price">

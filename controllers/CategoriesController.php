@@ -27,6 +27,7 @@ class CategoriesController extends AdminAccessController
         unset($chars_values_id['page']);
         unset($chars_values_id['per-page']);
         unset($chars_values_id['alias']);
+        unset($chars_values_id['_pjax']);
 
         if (isset($_GET['slider'])) unset($chars_values_id['slider']);
 
