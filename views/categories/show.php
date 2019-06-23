@@ -1,7 +1,7 @@
 <?php
 
-use yii\helpers\Url;
 use yii2mod\slider\IonSlider;
+use yii\helpers\ArrayHelper;
 
 if (empty($model)) {
     $this->title = 'Каталог';
@@ -32,14 +32,19 @@ echo $this->render('@views/cart/modal.php');
                         <div id="dk_filter_slider">
                             <span>Цена:</span>
                             <div class="slider-wrap">
+                                <?php
+                                $price = explode(';', Yii::$app->request->get('slider'));
+                                $priceMin = ArrayHelper::getValue($price, 0);
+                                $priceMax = ArrayHelper::getValue($price, 1);
+                                ?>
                                 <?= IonSlider::widget([
                                     'name' => 'slider',
                                     'type' => IonSlider::TYPE_DOUBLE,
                                     'pluginOptions' => [
                                         'min' => 0,
                                         'max' => 15000,
-                                        'from' => 0,
-                                        'to' => 15000,
+                                        'from' => $priceMin ?? 0,
+                                        'to' => $priceMax ?? 15000,
                                         'step' => 1,
 //                                        'hide_min_max' => true,
 //                                        'hide_from_to' => true
