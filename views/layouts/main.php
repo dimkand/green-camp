@@ -24,6 +24,23 @@ $tels = \app\models\Params::find()->one();
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140785796-1"></script>
+
+    <!-- Google Tag Manager -->
+
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+
+            'https://www.googletagmanager.com/gtm.js?...;
+
+        })(window,document,'script','dataLayer','GTM-WD23ZJG');
+    </script>
+
+    <!-- End Google Tag Manager -->
+
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -31,6 +48,7 @@ $tels = \app\models\Params::find()->one();
 
         gtag('config', 'UA-‎140785796-1');
     </script>
+
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -39,6 +57,15 @@ $tels = \app\models\Params::find()->one();
     <?php $this->head() ?>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?..."
+
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- End Google Tag Manager (noscript) -->
+
+
 <script>
     var bodies = document.getElementsByTagName('body');
     for (i = 0; i < bodies.length; i++) {
