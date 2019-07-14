@@ -63,6 +63,7 @@ class ComposerStaticInitca92174f94924455cc80624f2ab12859
         ),
         'c' => 
         array (
+            'cybercog\\yii\\googleanalytics\\' => 29,
             'cebe\\markdown\\' => 14,
         ),
         'W' => 
@@ -227,6 +228,10 @@ class ComposerStaticInitca92174f94924455cc80624f2ab12859
         'kartik\\base\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-krajee-base/src',
+        ),
+        'cybercog\\yii\\googleanalytics\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/cybercog/yii2-google-analytics/src',
         ),
         'cebe\\markdown\\' => 
         array (

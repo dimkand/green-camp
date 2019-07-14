@@ -33,6 +33,7 @@ return array(
     'kartik\\field\\' => array($vendorDir . '/kartik-v/yii2-field-range/src'),
     'kartik\\dropdown\\' => array($vendorDir . '/kartik-v/yii2-dropdown-x'),
     'kartik\\base\\' => array($vendorDir . '/kartik-v/yii2-krajee-base/src'),
+    'cybercog\\yii\\googleanalytics\\' => array($vendorDir . '/cybercog/yii2-google-analytics/src'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),

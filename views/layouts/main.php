@@ -12,6 +12,7 @@ use app\assets\FontAsset;
 use yii\bootstrap\NavBar;
 use yii\bootstrap\Nav;
 use app\components\Helpers;
+use cybercog\yii\googleanalytics\widgets\GATracking;
 
 AppAsset::register($this);
 FontAsset::register($this);
@@ -22,16 +23,10 @@ $tels = \app\models\Params::find()->one();
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140785796-1"></script>
 
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-‎140785796-1');
-    </script>
+    <?= GATracking::widget([
+        'trackingId' => 'UA-‎140785796-1',
+    ]) ?>
 
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
